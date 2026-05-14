@@ -1,0 +1,19 @@
+# Staff Names — [YOUR FIRM NAME]
+#
+# One name per line. The sort-scans skill reads this file and treats these
+# names as office staff — never as clients.
+#
+# Why this matters: printed emails and annotated documents often show the
+# inbox owner's name prominently at the top. Without this list, the skill
+# would misidentify the staff member as the client. With it, the skill
+# looks past the staff name to find the actual client in the document body,
+# handwritten annotations, or elsewhere on the page.
+#
+# Include: attorneys, paralegals, legal assistants, receptionists, and any
+# other office staff whose names may appear on scanned documents.
+#
+# Format: First Last (one name per line, no punctuation)
+
+[Attorney Name]
+[Staff Name 1]
+[Staff Name 2]

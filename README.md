@@ -35,7 +35,7 @@ publishers:
 
 | Skill | Practice area | Status |
 |---|---|---|
-| *(first skill coming soon)* | | |
+| `sort-scans` | Multi | OCR, identify, name, and file scanned documents into client folders |
 
 ## Contributing
 
