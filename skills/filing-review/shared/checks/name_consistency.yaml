@@ -1,0 +1,30 @@
+name: name_consistency
+description: >
+  A named party's name must refer to the same person across multiple
+  documents in the filing, under configurable normalization rules.
+parameters:
+  - {key: docs, type: list[doc-id], required: true,
+     notes: "Documents to compare. Each entry may be a doc-id (compare full extracted name) or an object {doc: <id>, locator: <prose>} to target a specific field."}
+  - {key: party, type: string, required: false,
+     notes: "Which party this is checking (e.g., 'petitioner', 'beneficiary', 'defendant'). Surfaced in the report."}
+  - {key: normalization, type: object, required: false,
+     notes: |
+       Optional normalization rules. Recognized keys:
+         middle_optional: bool   — middle names/initials may be omitted in some sources
+         suffix_optional: bool   — generational suffixes (Jr., Sr., III) may be omitted
+         honorifics_ignored: bool — Mr./Mrs./Dr. ignored
+         transliteration_tolerant: bool — accept reasonable transliteration variants
+         case_insensitive: bool  — case-insensitive comparison (default true)
+       Defaults to all true except transliteration_tolerant.}
+predicate: names_match
+default_severity: warn
+notes: |
+  Name mismatches between the principal form/pleading and supporting
+  evidence are a leading RFE/objection trigger in form-driven filings
+  (USCIS in particular). Warn-by-default lets the attorney see and
+  decide; block-by-override is appropriate when the names MUST match
+  exactly (e.g., naturalization certificate to the form's identification
+  block).
+
+  When this check fires, the report should show each source's extracted
+  name and the normalization rules applied.

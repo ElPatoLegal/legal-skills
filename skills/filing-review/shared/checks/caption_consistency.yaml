@@ -1,0 +1,20 @@
+name: caption_consistency
+description: >
+  All pleadings in a filing must share an identical caption (court name,
+  case number, party names). The single highest-value cross-document check
+  for pleading-style filings.
+parameters:
+  - {key: docs, type: list[doc-id], required: true,
+     notes: "List of pleading IDs whose captions must match."}
+  - {key: also_check_court_name, type: bool, default: true,
+     notes: "Set false in rare cases where caption appears without the court name (extracts, supplemental indexes)."}
+predicate: case_number_and_party_names_exact
+default_severity: block
+notes: |
+  Drift between captions is the #1 clerk-rejection cause in pleading
+  filings. Check character-by-character on case number; party names allow
+  trivial whitespace and case normalization but not name reorderings,
+  added/dropped parties, or "et al." abbreviations versus full lists.
+
+  When this check fires, the report should name the offending doc and
+  show a side-by-side diff of the caption against the others.
