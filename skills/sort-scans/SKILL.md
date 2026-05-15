@@ -3,6 +3,7 @@ name: sort-scans
 description: "OCR, identify, name, and file scanned legal documents. Reads each PDF using text extraction and vision, determines the client and document type, applies your firm's naming conventions, and moves files into the correct folders — silently, without prompting. Trigger on: 'sort scans', 'process scans', 'file the scans', 'sort the PDFs', 'process the inbox'."
 practice_area: multi
 jurisdiction: any
+author: Patrick Kolasinski
 platform: windows
 dependencies:
   - python >= 3.10
@@ -15,6 +16,13 @@ last_verified: 2026-05-14
 freshness_window: 12 months
 license: MIT
 ---
+
+> Licensed under the MIT License. See LICENSE in the repo root.
+> Copyright in this skill is retained by its author(s) — see the YAML
+> `author` field above and this file's Git history.
+>
+> [AI-ASSISTED DRAFT — requires attorney review. Not legal advice.
+> No attorney-client relationship is created by use of this skill.]
 
 # Sort Scans
 
