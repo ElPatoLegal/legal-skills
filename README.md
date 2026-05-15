@@ -41,6 +41,14 @@ publishers:
 
 Skills are plain-text SKILL.md files. See [CONTRIBUTING.md](CONTRIBUTING.md) for the format and design framework. Practitioners welcome — you don't need to be a developer.
 
-## License
+## License & Disclaimer
 
-MIT. Every output from every skill is a draft for attorney review — not legal advice.
+**License.** This project is licensed under the MIT License. See [LICENSE](LICENSE) for the full text. Contributors retain copyright in their individual skills; the project-level license covers distribution and use.
+
+**No attorney-client relationship.** Use of this repository, any skill in it, or any output produced by a skill does not create an attorney-client relationship with the author or with any contributor.
+
+**Drafts, not advice.** Every output from every skill is an AI-assisted draft intended for review by a licensed attorney. Nothing in this repository constitutes legal advice. Do not rely on any output without independent attorney review.
+
+**Jurisdiction-dependent.** Law varies by jurisdiction and changes over time. Skills declare a target jurisdiction and a `last_verified` date, but it is the user's responsibility to verify that any output is current and correct for the relevant jurisdiction before relying on it or filing it.
+
+**AS IS, no warranty.** The software is provided "AS IS", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and noninfringement, as set out in the MIT License.
