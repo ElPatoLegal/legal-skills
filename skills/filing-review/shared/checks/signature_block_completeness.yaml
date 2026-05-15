@@ -1,0 +1,34 @@
+name: signature_block_completeness
+description: >
+  Each named document carries a complete signature block — signature
+  glyph, printed name, contact info, and date — as required by the
+  applicable rule.
+parameters:
+  - {key: docs, type: list[doc-id], required: true,
+     notes: "Documents that must each carry a complete signature block."}
+  - {key: require, type: list[string], required: false,
+     notes: |
+       Which signature-block elements must be present. Recognized values:
+         signature        — handwritten or e-signature glyph
+         printed_name     — printed/typed name
+         bar_number       — state bar number (or equivalent)
+         firm             — firm name
+         address          — mailing address
+         phone            — phone number
+         email            — email address
+         date             — date of signing
+         role             — role designation ("Attorney for Plaintiff", etc.)
+       Default: [signature, printed_name, address, phone, email, date].
+       FRCP 11(a) requires at least signature, printed name, address,
+       email, telephone for federal pleadings; many state courts add
+       bar number.}
+predicate: signature_present
+default_severity: block
+notes: |
+  Distinct from a check that the signing is by the correct person — this
+  check only verifies the block is complete, not that the signer has
+  authority. The free-form `rule:` mechanism handles authority questions
+  ("the petitioner must sign Part 9 personally" etc.).
+
+  When this check fires, the report should name the missing block
+  elements per document.

@@ -1,5 +1,19 @@
 # ElPato Legal Skills
 
+> ## ⚠️ ALPHA — ACTIVELY DEVELOPED — NOT VERIFIED TO WORK
+>
+> **This repository is an alpha. Every skill in it is in active development
+> and has not been independently confirmed to produce correct results.**
+> Outputs may be wrong, incomplete, or misleading. Do not rely on any
+> output without close attorney review, and do not file anything based on
+> a skill's output without independently verifying it. Behaviors, file
+> formats, descriptor schemas, and skill interfaces can change without
+> notice between versions.
+>
+> If you use a skill on a real matter, treat its output as a junior
+> associate's first-pass draft on a bad day — useful as a starting point,
+> definitely not the work product.
+
 Community legal skills for **immigration, criminal defense, family law, and civil litigation** — built by practitioners for practitioners.
 
 This registry fills a gap in the [claude-for-legal](https://github.com/anthropics/claude-for-legal) ecosystem: practice-area skills for the areas that weren't covered at launch. Every skill is a draft-for-attorney-review tool, not a legal conclusion engine.
@@ -35,7 +49,11 @@ publishers:
 
 | Skill | Practice area | Status |
 |---|---|---|
-| `sort-scans` | Multi | OCR, identify, name, and file scanned documents into client folders |
+| `sort-scans` | Multi | Alpha — OCR, identify, name, and file scanned documents into client folders |
+| `filing-review/review-filing` | Multi | Alpha — review a filing for completeness and compliance against a descriptor |
+| `filing-review/build-filing-descriptor` | Multi | Alpha — build or edit the descriptors used by `review-filing` |
+
+See [CHANGELOG.md](CHANGELOG.md) for a repo-wide history of skill additions and changes; each skill folder also has its own changelog.
 
 ## Contributing
 
